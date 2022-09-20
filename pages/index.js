@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Feed from '../components/Feed'
 import Header from '../components/Header'
 
-export default function Home() {
+export default function Home({ storyData }) {
+  console.log(storyData);
   return (
     <div>
       <Head>
@@ -16,10 +17,24 @@ export default function Home() {
         <Header />
 
         {/* Feed */}
-        <Feed />
+        <Feed storyData={storyData} />
 
         {/* Modal */}
       </main>
     </div>
   )
+}
+export async function getStaticProps() {
+  const res = await fetch('https://dummyapi.io/data/v1/user?limit=20', {
+    method: 'GET',
+    headers: {
+      'app-id': '6329d8643f0c04bb881d6411'
+    }
+  });
+  const parsed = await res.json();
+  return {
+    props: {
+      storyData: parsed.data
+    }
+  }
 }
