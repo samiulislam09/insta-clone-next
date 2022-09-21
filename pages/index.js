@@ -3,7 +3,6 @@ import Feed from '../components/Feed'
 import Header from '../components/Header'
 
 export default function Home({ storyData }) {
-  console.log(storyData);
   return (
     <div>
       <Head>
@@ -12,7 +11,7 @@ export default function Home({ storyData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='bg-gray-50'>
         {/* Header */}
         <Header />
 

@@ -27,7 +27,7 @@ function Header() {
                   <div className='absolute inset-y-0 pl-3 flex items-center py-4'>
                       <SearchIcon className='h-5 w-5 text-gray-400'></SearchIcon>
                   </div>
-                  <input className='bg-gray-50 block w-full pl-10 text-sm border-gray-300 focus:ring-black focus:border-black rounded-md' type="text" placeholder='Search' />
+                  <input className='bg-gray-50 block w-32 md:w-full pl-10 text-sm border-gray-300 focus:ring-black focus:border-black rounded-md' type="text" placeholder='Search' />
               </div>
 
               {/* right */}
